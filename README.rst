@@ -2,6 +2,16 @@
 django-simplesshkey
 ===================
 
+Forked from https://github.com/zorun/django-simplesshkey
+which was forked from https://github.com/ClemsonSoCUnix/django-sshkey
+
+Changes made....
+Added `rawkeys\<username>` URL to get public keys associated with a given user
+
+TODO: SSO integration
+TODO: Remove edit option(maybe?) - does anyone ever _edit_ a public key, or just delete and add new
+TODO: Currently, the `rawkeys` output includes a space between keys.  Should be removed
+
 django-simplesshkey allows you to associate multiple SSH public keys with Django
 user accounts.  It provides views to list, add, edit, and delete keys, each of
 which is intended for end-user consumption.  Of course, you can also manage SSH keys
