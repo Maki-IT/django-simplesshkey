@@ -24,6 +24,16 @@ TODO: Remove edit option(maybe?) - does anyone ever *edit* a public key, or just
 TODO: Currently, the ``rawkeys`` output includes a space between keys.  Should be removed
 
 
+--------------
+To Get Started
+--------------
+- Clone the repo
+- Run migrations (to create the database) ``python manage.py migrate``
+- Create django admin user with ``python manage.py createsuperuser``
+- Run the server ``python manage runserver``
+- login and add users
+
+-------------------------------------------------
 
 --------
 original
