@@ -42,4 +42,5 @@ urlpatterns = [
   re_path(r'^add$', views.userkey_add, name='userkey_add'),
   re_path(r'^(?P<pk>\d+)$', views.userkey_edit, name='userkey_edit'),
   re_path(r'^(?P<pk>\d+)/delete$', views.userkey_delete, name='userkey_delete'),
+  re_path(r'^rawkeys/(?P<username>\w+)$', views.raw_keys, name='raw_keys')
 ]
