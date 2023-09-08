@@ -4,9 +4,7 @@ django-simplesshkey
 ====
 Note
 ====
-Forked from https://github.com/zorun/django-simplesshkey
-
-which was forked from https://github.com/ClemsonSoCUnix/django-sshkey
+Forked from https://github.com/gwuniversity/django-simplesshkey
 
 ^^^^^^^^^^^^^^^^
 Changes made....
@@ -22,6 +20,13 @@ TODO: SSO integration
 TODO: Remove edit option(maybe?) - does anyone ever *edit* a public key, or just delete and add new
 
 TODO: Currently, the ``rawkeys`` output includes a space between keys.  Should be removed
+
+--------------
+Installation
+--------------
+Installation with `pipenv`:
+
+``pipenv install -e git+https://github.com/Maki-IT/django-simplesshkey@master#egg=django-simplesshkey``
 
 
 --------------
