@@ -96,7 +96,7 @@ mapping.
 
 ## Templates
 
-Example templates are available in the ``templates.example`` directory.
+Example templates are available in the [templates.example](templates.example/sshkey) directory.
 
 ``sshkey/userkey_list.html``
   Used when listing a user's keys.
@@ -107,12 +107,14 @@ Example templates are available in the ``templates.example`` directory.
 
 ## Management commands
 
-``import_sshkey [--auto-resolve] [--prefix PREFIX] [--name NAME] USERNAME KEY_PATH ...``
+- ``import_sshkey [--auto-resolve] [--prefix PREFIX] [--name NAME] USERNAME KEY_PATH ...``
+
   Imports SSH public keys to tie to a user. If ``--auto-resolve/-a`` are given,
   attempt to generate unique key names using a UUID. The prefix used during
   this process is the key name, but can be changed using ``--prefix/-p``.
 
-``normalize_sshkeys [USERNAME KEY_NAME]``
+- ``normalize_sshkeys [USERNAME KEY_NAME]``
+
   Recalculates key data to reflect a changed setting, for instance, if you have
   changed ``SSHKEY_DEFAULT_HASH`` and some keys have incorrect fingerprints in
   your database. Given no arguments, all keys will be normalized. The username
