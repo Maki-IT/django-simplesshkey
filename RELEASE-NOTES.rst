@@ -2,6 +2,11 @@
 Release Notes for django-simplesshkey
 =====================================
 
+2.1.1 (2023-03-07)
+------------------
+
+* Update Installation steps
+
 2.1.0 (2023-03-07)
 ------------------
 
