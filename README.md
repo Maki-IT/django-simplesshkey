@@ -96,7 +96,7 @@ mapping.
 
 ## Templates
 
-Example templates are available in the [templates.example](templates.example/sshkey) directory.
+Example templates are available in the [templates.example](simplesshkey/templates.example/sshkey) directory.
 
 ``sshkey/userkey_list.html``
   Used when listing a user's keys.
