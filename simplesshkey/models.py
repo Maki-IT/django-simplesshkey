@@ -46,7 +46,7 @@ class AbstractUserKey(models.Model):
     key = models.TextField(max_length=2000)
     keytype = models.CharField(max_length=32, blank=True,
                                help_text="Type of key, e.g. 'ssh-rsa'")
-    fingerprint = models.CharField(max_length=128, blank=True, db_index=True)
+    fingerprint = models.CharField(max_length=128, null=True, db_index=True)
     created = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
 
