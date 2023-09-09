@@ -5,7 +5,9 @@ This is a fork of https://github.com/gwuniversity/django-simplesshkey
 
 ## Installation
 1. Installation with `pipenv` (recommended): 
-  - `pipenv install -e git+https://github.com/Maki-IT/django-simplesshkey@master#egg=django-simplesshkey`
+  - ```sh
+    pipenv install -e git+https://github.com/Maki-IT/django-simplesshkey@master#egg=django-simplesshkey
+    ```
 2. Alternative/manual installation: 
   - Clone or copy the directory `simplesshkey` of this repository to your project's root (where other apps are located as well)
 3. Add `simplesshkey` to the `INSTALLED_APPS` list in your project's `settings.py`.
@@ -16,11 +18,11 @@ This is a fork of https://github.com/gwuniversity/django-simplesshkey
   SSHKEY_DEFAULT_HASH = '<sha256/md5/legacy>
   AUTH_USER_MODEL = "<app.model>"  # Set this, if you use a custom user model 
   ```
-5. Map the URLs into your project. See [url configuration](#url-configuration) below
-6. If needed, create a [custom SSH Key model](#custom-model).
-7. Make migrations `python manage.py makemigrations`
-8. Apply migrations `python manage.py migrate`
-9. See [templates](#templates) for example templates
+1. Map the URLs into your project. See [url configuration](#url-configuration) below
+2. If needed, create a [custom SSH Key model](#custom-model).
+3. Make migrations `python manage.py makemigrations`
+4. Apply migrations `python manage.py migrate`
+5. See [templates](#templates) for example templates
 
 ## Original
 
