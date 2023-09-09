@@ -1,5 +1,5 @@
 include LICENSE
-include README.rst
+include README.md
 include RELEASE-NOTES.rst
 recursive-include simplesshkey/migrations *.py
 recursive-include simplesshkey/templates.example *
