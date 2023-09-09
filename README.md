@@ -1,48 +1,27 @@
-===================
-django-simplesshkey
-===================
-====
-Note
-====
-Forked from https://github.com/gwuniversity/django-simplesshkey
+# django-simplesshkey
 
-^^^^^^^^^^^^^^^^
-Changes made....
-^^^^^^^^^^^^^^^^
-
-Added ``rawkeys\<username>`` URL to get public keys associated with a given user
-
-^^^^^
-Plans
-^^^^^
-TODO: SSO integration
-
-TODO: Remove edit option(maybe?) - does anyone ever *edit* a public key, or just delete and add new
-
-TODO: Currently, the ``rawkeys`` output includes a space between keys.  Should be removed
-
---------------
-Installation
---------------
-Installation with `pipenv`:
-
-``pipenv install -e git+https://github.com/Maki-IT/django-simplesshkey@master#egg=django-simplesshkey``
+This is a fork of https://github.com/gwuniversity/django-simplesshkey
 
 
---------------
-To Get Started
---------------
-- Clone the repo
-- Run migrations (to create the database) ``python manage.py migrate``
-- Create django admin user with ``python manage.py createsuperuser``
-- Run the server ``python manage runserver``
-- login and add users
+## Installation
+1. Installation with `pipenv`: 
+  `pipenv install -e git+https://github.com/Maki-IT/django-simplesshkey@master#egg=django-simplesshkey`
+2. Alternative/manual installation: 
+  Clone the directory `simplesshkey` of this repository to your project's root (where other apps are located as well)
+3. Add `simplesshkey` to the `INSTALLED_APPS` list in your project's `settings.py`.
+4. Also in `settings.py` set the following variables:
+   See [settings](settings) bellow
+  ``` python
+  SSHKEY_ALLOW_EDIT = <True/False>
+  SSHKEY_DEFAULT_HASH = '<sha256/md5/legacy>
+  AUTH_USER_MODEL = "<app.model>"  # Set this, if you use a custom user model 
+  ```
+5. Map the URLs into your project. See [url configuration](#url-configuration) below
+6. Make migrations `python manage.py makemigrations`
+7. Apply migrations `python manage.py migrate`
 
--------------------------------------------------
+## Original
 
---------
-original
---------
 django-simplesshkey allows you to associate multiple SSH public keys with Django
 user accounts.  It provides views to list, add, edit, and delete keys, each of
 which is intended for end-user consumption.  Of course, you can also manage SSH keys
@@ -55,8 +34,7 @@ For instance, the author `uses Ansible to deploy the SSH keys to several machine
 <https://framagit.org/compile-farm/gccfarm>`_.
 
 
-About django-sshkey and django-simplesshkey
-===========================================
+## About django-sshkey and django-simplesshkey
 
 `django-simplesshkey` is a fork of django-sshkey_, based on version 2.5.0.
 
@@ -76,41 +54,34 @@ The goal of this fork is twofolds:
 Of course, if you need all the extra features of django-sshkey, you should
 continue using it!
 
-Migrating from django-sshkey
-============================
 
-If you are using django-sshkey but don't need the extra functionalities, it is
-possible to start using django-simplesshkey and import your data.
-
-The migration process is a bit convoluted, see `README.upgrading.rst` for details.
-
-
-The Django app
-==============
+## The Django app
 
 To use django-sshkey in your Django project, simply add ``django_sshkey`` to
 ``INSTALLED_APPS`` in ``settings.py``, map the URLs into your project, and
 provide templates for the views (example templates are provided in the source).
 
 
-URL Configuration
------------------
+## URL Configuration
+
+Added ``rawkeys\<username>`` URL to get public keys associated with a given user
 
 This text assumes that your project's ``urls.py`` maps ``simplesshkey.urls``
 into the URL namespace as follows::
 
+```
   urlpatterns = [
-    ...
-    url('^sshkey/', include('simplesshkey.urls')),
+  ...
+    re_path('^sshkey/', include('simplesshkey.urls')),
     ...
   ]
+```
 
 You will need to adjust your URLs in the examples below if you use a different
 mapping.
 
 
-Settings
---------
+## Settings
 
 ``SSHKEY_ALLOW_EDIT``
   Boolean, defaults to ``False``.  Whether or not editing keys is allowed.
@@ -123,8 +94,7 @@ Settings
   prefix.
 
 
-Templates
----------
+## Templates
 
 Example templates are available in the ``templates.example`` directory.
 
@@ -135,8 +105,7 @@ Example templates are available in the ``templates.example`` directory.
   Used when adding or editing a user's keys.
 
 
-Management commands
--------------------
+## Management commands
 
 ``import_sshkey [--auto-resolve] [--prefix PREFIX] [--name NAME] USERNAME KEY_PATH ...``
   Imports SSH public keys to tie to a user. If ``--auto-resolve/-a`` are given,
