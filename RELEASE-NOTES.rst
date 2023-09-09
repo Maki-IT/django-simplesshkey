@@ -2,6 +2,11 @@
 Release Notes for django-simplesshkey
 =====================================
 
+2.1.2 (2023-03-07)
+------------------
+
+* Prevent users to add the same key twice on a per-user level
+
 2.1.1 (2023-03-07)
 ------------------
 
