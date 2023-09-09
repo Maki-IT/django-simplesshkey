@@ -10,7 +10,7 @@ This is a fork of https://github.com/gwuniversity/django-simplesshkey
   Clone the directory `simplesshkey` of this repository to your project's root (where other apps are located as well)
 3. Add `simplesshkey` to the `INSTALLED_APPS` list in your project's `settings.py`.
 4. Also in `settings.py` set the following variables:
-   See [settings](settings) bellow
+   See [settings](#settings) bellow
   ``` python
   SSHKEY_ALLOW_EDIT = <True/False>
   SSHKEY_DEFAULT_HASH = '<sha256/md5/legacy>
