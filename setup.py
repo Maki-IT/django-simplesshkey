@@ -1,5 +1,6 @@
 # Copyright (c) 2017, Baptiste Jonglez
 # Copyright (c) 2014-2016, Clemson University
+# Copyright (c) 2023, Maki IT
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -49,9 +50,9 @@ setup(
         "(fork of django-sshkey without SSHD integration)"
     ),
     long_description=README,
-    url="https://github.com/zorun/django-simplesshkey",
-    author="Baptiste Jonglez",
-    author_email="python@bitsofnetworks.org",
+    url="https://github.com/Maki-IT/django-simplesshkey",
+    author="Kim Olvier Drechsel",
+    author_email="kontakt@maki-it.de",
     zip_safe=False,
     classifiers=[
         "Environment :: Web Environment",
