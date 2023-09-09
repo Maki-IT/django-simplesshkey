@@ -47,14 +47,15 @@ def normalize_user_key(modeladmin, request, queryset):
 
 class UserKeyAdmin(admin.ModelAdmin):
     list_display = [
-        'name',
         'user',
+        'name',
         'fingerprint',
         'created',
         'last_modified',
     ]
     search_fields = [
         'user__username',
+        'user__email',
     ]
     readonly_fields = [
         'keytype',

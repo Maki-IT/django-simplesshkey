@@ -2,12 +2,18 @@
 Release Notes for django-simplesshkey
 =====================================
 
-2.1.2 (2023-03-07)
+2.1.3 (2023-09-09)
+------------------
+
+* Change field order in admin dashboard
+* Set model field fingerprint to blank=True and null=True
+
+2.1.2 (2023-09-09)
 ------------------
 
 * Prevent users to add the same key twice on a per-user level
 
-2.1.1 (2023-03-07)
+2.1.1 (2023-09-09)
 ------------------
 
 * Update Installation steps
