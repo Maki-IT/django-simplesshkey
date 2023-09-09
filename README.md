@@ -64,7 +64,7 @@ Added ``rawkeys\<username>`` URL to get public keys associated with a given user
 This text assumes that your project's ``urls.py`` maps ``simplesshkey.urls``
 into the URL namespace as follows::
 
-```
+```python
   urlpatterns = [
   ...
     re_path('^sshkey/', include('simplesshkey.urls')),
