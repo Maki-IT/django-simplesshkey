@@ -17,9 +17,10 @@ This is a fork of https://github.com/gwuniversity/django-simplesshkey
   AUTH_USER_MODEL = "<app.model>"  # Set this, if you use a custom user model 
   ```
 5. Map the URLs into your project. See [url configuration](#url-configuration) below
-6. Make migrations `python manage.py makemigrations`
-7. Apply migrations `python manage.py migrate`
-8. See [templates](#templates) for example templates
+6. If needed, create a [custom SSH Key model](#custom-model).
+7. Make migrations `python manage.py makemigrations`
+8. Apply migrations `python manage.py migrate`
+9. See [templates](#templates) for example templates
 
 ## Original
 
@@ -86,6 +87,21 @@ mapping.
   hash is stored in the ``fingerprint`` field of each SSH key object.
   Legacy behavior enforces OpenSSH's pre-6.8 behavior of MD5 without the ``MD5:``
   prefix.
+
+
+## Custom Model
+
+To make changes on the UserKey model, you can inherit in your new model.
+
+In this example the Meta option `unique_together` is added, to prevent a user to add the same SSH Key twice.
+The corresponding fields can be found in `models.py`.
+
+```python
+class SshKey(AbstractUserKey):
+    """SSH Public Key for SFTP Access"""
+    class Meta:
+        unique_together = (("user", "fingerprint"),)
+```
 
 
 ## Templates
