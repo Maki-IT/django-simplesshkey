@@ -4,7 +4,7 @@ This is a fork of https://github.com/gwuniversity/django-simplesshkey
 
 
 ## Installation
-1. Installation with `pipenv`: 
+1. Installation with `pipenv` (recommended): 
   - `pipenv install -e git+https://github.com/Maki-IT/django-simplesshkey@master#egg=django-simplesshkey`
 2. Alternative/manual installation: 
   - Clone or copy the directory `simplesshkey` of this repository to your project's root (where other apps are located as well)
