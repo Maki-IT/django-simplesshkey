@@ -52,6 +52,7 @@ class AbstractUserKey(models.Model):
 
     class Meta:
         abstract = True
+        unique_together = (("user", "fingerprint"),)
 
     def __str__(self):
         return '{}: {} [{}]'.format(self.user, self.name, self.keytype)

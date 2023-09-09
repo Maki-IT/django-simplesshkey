@@ -2,3 +2,5 @@
 /django_sshkey.egg-info
 /testproject/test.db
 db.sqlite3
+Pipfile
+Pipfile.lock
