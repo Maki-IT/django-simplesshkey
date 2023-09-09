@@ -19,6 +19,7 @@ This is a fork of https://github.com/gwuniversity/django-simplesshkey
 5. Map the URLs into your project. See [url configuration](#url-configuration) below
 6. Make migrations `python manage.py makemigrations`
 7. Apply migrations `python manage.py migrate`
+8. See [templates](#templates) for example templates
 
 ## Original
 
@@ -53,13 +54,6 @@ The goal of this fork is twofolds:
 
 Of course, if you need all the extra features of django-sshkey, you should
 continue using it!
-
-
-## The Django app
-
-To use django-sshkey in your Django project, simply add ``django_sshkey`` to
-``INSTALLED_APPS`` in ``settings.py``, map the URLs into your project, and
-provide templates for the views (example templates are provided in the source).
 
 
 ## URL Configuration
